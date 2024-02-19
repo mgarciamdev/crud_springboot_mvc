@@ -20,8 +20,9 @@ public class PersonaService implements IPersonaService {
     }
 
     @Override
-    public Optional<Persona> listarId() {
-        return Optional.empty();
+    public Optional<Persona> listarId(int id) {
+
+        return data.findById(id);
     }
 
     @Override
@@ -36,6 +37,6 @@ public class PersonaService implements IPersonaService {
 
     @Override
     public void delete(int id) {
-
+        data.deleteById(id);
     }
 }

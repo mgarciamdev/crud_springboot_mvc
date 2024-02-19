@@ -9,7 +9,7 @@ public interface IPersonaService {
 
     public List<Persona> listar();
 
-    public Optional<Persona> listarId();
+    public Optional<Persona> listarId(int id);
 
     public int save(Persona persona);
 

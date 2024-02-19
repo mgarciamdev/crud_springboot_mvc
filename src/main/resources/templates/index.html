@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container mt-4">
-        <a th:href="@{/new}" class="btn btn-outline-success">Nuevo</a>
+        <a th:href="@{/new}" class="btn btn-outline-success mt-4 mr-auto">Nuevo</a>
         <table class="table">
             <thead>
                 <tr>
@@ -23,10 +23,16 @@
                     <td th:text="${persona.name}"></td>
                     <td th:text="${persona.telefono}"></td>
                     <td>
-                        <a class="btn btn-outline-warning">Editar</a>
-                        <a class="btn btn-outline-danger">Eliminar</a>
+                        <a th:href="@{/editar/} + ${persona.id}" class="btn btn-outline-warning">Editar</a>
+                        <a th:onclick="eliminar([[${persona.id}]])" class="btn btn-outline-danger">Eliminar</a>
                     </td>
                 </tr>
+                <script
+                        src="https://code.jquery.com/jquery-3.7.1.js"
+                        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+                        crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="function.js"></script>
             </tbody>
         </table>
     </div>
